@@ -53,7 +53,8 @@ if __name__== "__main__":
     
     # Mesonet variables to obtain
     # If you dont' specify, it will return all available 
-    # ET is not included on the REST server?!?
+    # EVAPOTRANS variable (e.g. ET) is not included on the REST server?!?
+    # Manually retreived from the web and added as extra column...
     climVars = 'TEMP2MMAX,TEMP2MMIN,PRECIP,WSPD2MAVG,RELHUM2MAVG,SR'
     
     # Final column names
