@@ -45,7 +45,7 @@ if __name__== "__main__":
     # INPUTS #
     #--------#
 
-    # Main directory to store output for Ag-Climate update
+    # Main directory to store output csv files
     outDir = ('./')
     
     # Location of REST service
