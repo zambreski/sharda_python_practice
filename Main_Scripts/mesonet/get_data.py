@@ -59,9 +59,7 @@ if __name__== "__main__":
     
     # Final column names
     colNames = {'TIMESTAMP':'Date','TEMP2MMAX':'tasmax','TEMP2MMIN':'tasmin','PRECIP':'pr',
-                'WSPD2MAVG':'wind','RELHUM2MAVG':'rh','SR':'rsds',
-               }
-    
+                'WSPD2MAVG':'wind','RELHUM2MAVG':'rh','SR':'rsds',}
     
     station  = 'Garden City'      # 'all' stations
     interval = 'day'              # Day, hour, 5min
@@ -125,7 +123,7 @@ if __name__== "__main__":
     df = df.drop(['STATION'],axis=1)
     
     # Write to file   
-    oFile_Name = outDir + '/ksmesonet_%s_%s_%s.xlsx'%(station,start.strftime("%Y%m%d"),
+    oFile_Name = outDir + '/ksmesonet_%s_%s_%s.csv'%(station,start.strftime("%Y%m%d"),
                                                  end.strftime('%Y%m%d'))
-    df.to_excel(oFile_Name,index=False,columns = colNames.values())
+    df.to_csv(oFile_Name,index=False,columns = colNames.values())
     
