@@ -161,13 +161,15 @@ if __name__== "__main__":
     # Iterates over the ImageCollection and puts it into the FeatureCollection
     # object
     newft = ee.FeatureCollection(precipitation.iterate(fill, ft))
-    print(newft)
+    print(type(newft))
+    print(type(precipitation.iterate(fill, ft)))
+    
     
     # Export excel table to your google drive. This is YOUR drive. Not Zach's.
     task = ee.batch.Export.table.toDrive(collection=newft, 
                                      description='mock_export',
                                      folder='DSSAT_Cambodia',
-                                     selectors = (["date","precip"]),
+                                     selectors = (["date","first"]),
                                      fileNamePrefix= pointName)
     
     # Start the above task, which is export command. This task may take

@@ -61,7 +61,7 @@ if __name__== "__main__":
     colNames = {'TIMESTAMP':'Date','TEMP2MMAX':'tasmax','TEMP2MMIN':'tasmin','PRECIP':'pr',
                 'WSPD2MAVG':'wind','RELHUM2MAVG':'rh','SR':'rsds',}
     
-    stations  = ['Garden City','Lane','Roth Tech Farm']      # 'all' for allstations
+    stations  = ['Garden City','Lane','Roth Tech Farm']      # 'all' for all stations
     interval  = 'day'              # Day, hour, 5min
     
     # Date information
@@ -128,4 +128,3 @@ if __name__== "__main__":
         oFile_Name = outDir + '/%s_%s_%s.csv'%(station,start.strftime("%Y%m%d"),
                                                      end.strftime('%Y%m%d'))
         df.to_csv(oFile_Name,index=False,columns = colNames.values())
-        
