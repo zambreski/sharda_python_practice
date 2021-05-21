@@ -4,6 +4,9 @@
 PURPOSE: Retreive selected variables from a kansas mesonet station from start
 to end dates.
 
+    In DSSAT, if dew point is missing, it has a function that calculates that
+    uses TMIN and RH MAX
+
     Final units:  
             Temperature: deg C
             Solar: mJ m-2 day-1
@@ -55,11 +58,11 @@ if __name__== "__main__":
     # If you dont' specify, it will return all available 
     # EVAPOTRANS variable (e.g. ET) is not included on the REST server?!?
     # Manually retreived from the web and added as extra column...
-    climVars = 'TEMP2MMAX,TEMP2MMIN,PRECIP,WSPD2MAVG,RELHUM2MAVG,SR'
+    climVars = 'TEMP2MMAX,TEMP2MMIN,PRECIP,WSPD2MAVG,RELHUM2MMAX,SR'
     
     # Final column names
     colNames = {'TIMESTAMP':'Date','TEMP2MMAX':'tasmax','TEMP2MMIN':'tasmin','PRECIP':'pr',
-                'WSPD2MAVG':'wind','RELHUM2MAVG':'rh','SR':'rsds',}
+                'WSPD2MAVG':'wind','RELHUM2MMAX':'rh','SR':'rsds'}
     
     stations  = ['Garden City','Lane','Roth Tech Farm']      # 'all' for all stations
     interval  = 'day'              # Day, hour, 5min
