@@ -463,7 +463,7 @@ C-----------------------------------------------------------------------
      &     LINEXP,AIRAMT,EFFIRR,CROP,FROP,MODEL,RNMODE,FILEX,
      &     CONTROL,ISWITCH,UseSimCtr,FILECTL,MODELARG,YRPLT)
 	 
-	 !PRINT *,ISWITCH % IKCB
+	 PRINT *,ISWITCH % IKCB
 
 C-----------------------------------------------------------------------
 C        Select crop parameter input file
@@ -788,6 +788,24 @@ C-----------------------------------------------------------------------
           CASE (3); FILEWC = FILE_CHECK; PATHWTC = PATHWT
         END SELECT
       ENDDO
+
+C-------------------------------------
+C     SELECT KCB file (ZAMBRESKI 2021)
+C------------------------------------
+	IF (ISWITCH % IKCB .EQ. 'Y') THEN
+		
+		 IF (MEWTH .EQ. 'M' .OR. RNMODE .EQ. 'Y') THEN
+			FILEK = FILE_CHECK(1:8)//'.KCB'
+			PRINT *,FILEK
+			INQUIRE (FILE=FILEK, EXIST = FEXIST)
+			PRINT *,FEXIST
+			
+		 ENDIF
+		 
+		 ! Only works when actual observed weather data
+		 !CALL ERROR (ERRKEY,1,FILEX,LINEXP)
+		 
+	ENDIF
 
 C-----------------------------------------------------------------------
 C     Build output files.

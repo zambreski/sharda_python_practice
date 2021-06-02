@@ -61,7 +61,7 @@ C=======================================================================
       INTEGER DOY, MULTI, NEV, RUN, YEAR, YRDOY, YRSIM, YYDDD
       INTEGER RSEED1, RSEED(4), REPNO
       INTEGER DYNAMIC, YREND
-
+	 
 !     Yield forecast variables
       INTEGER FYRDOY, FYRSIM, INCDAT, WDATE, WYEAR
 
@@ -135,8 +135,6 @@ C=======================================================================
      &    DEC, NEV, SNUP, SNDN, YREND)                    !Output
 
       FYRDOY = 0
-	  
-	  PRINT *,FILEW
 
 !***********************************************************************
 !***********************************************************************

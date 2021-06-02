@@ -228,8 +228,6 @@ C     The components are copied into local variables for use here.
         ENDIF
       ENDIF
 	  
-	  PRINT *, FILEIO
-
 !     Detect name of weather file based on MEWTH
       IF (INDEX('M',MEWTH) .GT. 0 .OR. SOURCE .EQ. 'FORCST') THEN
         WFile = FILEW
@@ -366,8 +364,6 @@ C     The components are copied into local variables for use here.
           CASE(3); EXIT                                !Header line 
           END SELECT
         ENDDO
-		
-		
 
 !       Found header line for weather station data
         CALL PARSE_HEADERS(LINE, MAXCOL, HEADER, ICOUNT, COL)
@@ -524,20 +520,26 @@ C       Substitute default values if REFHT or WINDHT are missing.
       ENDIF
 	  
       IF (NRecords == 0) THEN
-		CALL READ_KCB(KCB_A)    !Output
+	
+
 !       Use YRDOY_WY here (different argument than next call)
-		PRINT *, LINWTH, FILEIO, FILEWW,LUNWTH
+		
         CALL IpWRec(CONTROL, MaxRecords,
      &    COL, ICOUNT, FILEWW, HEADER, LINWTH,            !Input
-     &    LUNWTH, YRDOY_WY, CenturyWRecord,                  !Input
+     &    LUNWTH, YRDOY_WY, CenturyWRecord,               !Input
      &    ErrCode, FirstWeatherDay, LastWeatherDay,       !Output
      &    LineNumber, LongFile, NRecords, DCO2_A,         !Output
      &    OZON7_A, PAR_A, WFPASS,                         !Output
      &    RAIN_A, RHUM_A, SRAD_A, TDEW_A, TMAX_A,         !Output
      &    TMIN_A, VAPR_A, WINDSP_A, YRDOY_A, YREND,ETO_A)                                          !Output
         IF (ErrCode > 0) RETURN 
-      ENDIF
-
+       
+	   CALL READ_KCB(CONTROL,YRDOY_A, !Input
+     &    KCB_A) 
+	  
+	  ENDIF
+	  
+	  
 !     Set weather values for initialization to the day before start of simulation
 !     unless first weather day == start of simulation day
       IF (YRDOY_A(1) == YRDOY) THEN
@@ -575,8 +577,6 @@ C       Substitute default values if REFHT or WINDHT are missing.
 	  
 	  KCB   = KCB_A(I)
 	  
-	
-
 !     Error checking
       CALL DailyWeatherCheck(CONTROL,
      &    "WTHINIT", FILEWW, RAIN, RecNum, RHUM,          !Input
@@ -754,10 +754,8 @@ C         Read in weather file header.
         DCO2   = DCO2_A(I)
         OZON7  = OZON7_A(I)
 		ETO    = ETO_A(I)
-		KCB    = KCB_A(I)
 		
-		!print *, KCB
-		CALL PUT('SPAM', 'KCB', KCB)
+		CALL PUT('SPAM', 'KCB', KCB_A(I))
 
         LastRec = I
 		
@@ -1446,88 +1444,7 @@ c                   available.
       RETURN
       END SUBROUTINE WeatherError
 
-!=======================================================================
-!  READ_KCB, Subroutine, C.H. Porter, 05/2021
-!  Read KCB records into array
-!-----------------------------------------------------------------------
-!  REVISION HISTORY
-!  --NONE
-!-----------------------------------------------------------------------
-!  Called by: IPWTH_alt
-!  Calls:     None
-!=======================================================================
-	  
-	SUBROUTINE READ_KCB(KCB_A)
 	
-		INTEGER, PARAMETER :: MaxRecords = 10000
-		INTEGER, DIMENSION(MaxRecords) :: YRDOY_A, LineNumber
-		INTEGER LastRec, LastWeatherDay, NRecords
-		REAL, DIMENSION(MaxRecords) :: KCB_A
-		INTEGER CENTURY, ERR, ErrCode, FOUND, LINKCB, LUNKCB, MULTI, RUN,ISECT ,C1,C2,YRDOYW 
-		CHARACTER*6 FILEKC,ERRKEY
-		CHARACTER*120 LINE
-		REAL KCB
-		PARAMETER (ERRKEY = 'IPWTH ')
-      
-		FILEKC = 'RT.KCB'
-		
-		! Intialize arrays/integers
-		NRecords = 0
-        YRDOY_A  = 0
-	    KCB_A    = 0.0
-		LUNKCB   = 100
-		LINKCB   = 1
-		
-		C1 = 9
-		C2 = 13
-		
-		! OPEN THE FILE
-		OPEN (LUNKCB,FILE=FILEKC,STATUS='OLD',IOSTAT=ERR)
-		 
-		! Look for the header line
-		CALL IGNORE2 (LUNKCB, LINKCB, ISECT, LINE)
-		
-		DO WHILE (.TRUE.)   !.NOT. EOF(LUNWTH)
-          CALL IGNORE2 (LUNKCB, LINKCB, ISECT, LINE)
-          SELECT CASE(ISECT)
-			  CASE(0); CALL ERROR (ERRKEY,10,FILEKC,LINKCB) !End of file 
-			  CASE(1)
-				IF(FirstWeatherDay .EQ. -99) THEN
-				  CALL ERROR (ERRKEY,10,FILEKC,LINKCB) !Data record 
-				ENDIF
-			  CASE(2); CYCLE                               !End of section 
-			  CASE(3); EXIT                                !Header line 
-          END SELECT
-        ENDDO
-		
-		! Iterate each line of data
-		DO WHILE (.TRUE.)   !.NOT. EOF(LUNWTH)
-	!       Read array of weather records for this calendar year 
-	!       starting with simulation start date and ending at end 
-	!       of file or at MaxRecords # of records
-			CALL IGNORE(LUNKCB,LINKCB,FOUND,LINE)
-			
-			IF (FOUND == 1) THEN
-				
-				!PRINT *, LINE
-			
-				READ(LINE,'(I5)',IOSTAT=ERR)  YRDOYW
-				READ(LINE(C1:C2),*,IOSTAT=ERR) KCB
-				IF (ERR .NE. 0) KCB = -99.
-				
-				! ASSIGN PARSED VALUE INTO ARRAY
-				NRecords = NRecords + 1
-				YRDOY_A(NRecords) = YRDOYW
-				KCB_A(NRecords)  = KCB
-			ELSE
-			   EXIT ! Exit the loop if no more lines
-			ENDIF
-			
-		ENDDO
-	
-	!PRINT *, KCB_A(1:250)
-    
-	End Subroutine READ_KCB
 !=======================================================================
 
 !=======================================================================

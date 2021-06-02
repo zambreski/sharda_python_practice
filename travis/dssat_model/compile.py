@@ -34,7 +34,7 @@ if __name__== "__main__":
     # Upper-level Directory where DSSAT is stored
     TIERDIR  = "./model_1/dssat-csm-os"
     # PATH to LINK.TXT file
-    LINKPATH = '%s/Build/CMakeFiles/dscsm047.dir/'%(TIERDIR)
+    LINKPATH = './CMakeFiles/dscsm047.dir/'
     
     # Set True if want to build from scratch. Really only necessary if you 
     # REALLY MESS Something Up
@@ -49,6 +49,7 @@ if __name__== "__main__":
         """ Clean any builds; start from scratch """
         try:
             os.system('cmake -P distclean.cmake')
+            
             # Remove the current executable file
             os.system('rm dscsm047.exe')
         except:
@@ -59,7 +60,7 @@ if __name__== "__main__":
         os.system('cmake .. -DCMAKE_BUILD_TYPE=RELEASE')
         
         # Edit the link.txt file to remove the paths
-        FLAGSDEL = ["-static", "-static-libgcc" "-static-libgfortran"]
+        FLAGSDEL = ["-static", "-static-libgcc","-static-libgfortran"]
         INFILE_ITEMS = open(LINKPATH + 'link.txt','r').readlines()[0].split(' ')
         s = ''
         for item in  INFILE_ITEMS:
@@ -69,6 +70,8 @@ if __name__== "__main__":
         OFILE.write(s)
         OFILE.close()
         
+        os.system('make')
+        
     else:
         
         ''' Recompile the scripts that were updated and created new exe '''      
@@ -76,6 +79,7 @@ if __name__== "__main__":
         
         # Recompile any new files
         os.system('make')
+    
     
     os.system('mv ./bin/dscsm047.exe ..')
     os.chdir('../')

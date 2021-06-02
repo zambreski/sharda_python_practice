@@ -1,6 +1,6 @@
 *WEATHER MODULE DAILY OUTPUT FILE
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   1        : 20 IRRIG, light rate,freq CRGRO047 UFGA7801    1
  MODEL          : CRGRO047 - Soybean
@@ -146,7 +146,7 @@
  2020 289   135    0.0   11.0   12.0    4.6    9.2   0.74   11.5    6.0    8.6    9.6   -2.6    8.6    9.6  187.5  410.5   0.00   0.00 -99.00 2020289
  2020 290   136    0.0   11.0   12.0    4.6    9.2   0.74   11.5    6.0    8.6    9.6   -2.6    8.6    9.6  187.5  410.5   0.00   0.00 -99.00 2020290
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   2        : 20 RAINFED BRAGG          CRGRO047 UFGA7801    2
  MODEL          : CRGRO047 - Soybean

@@ -1,0 +1,2 @@
+/usr/bin/f95  -fd-lines-as-comments -fbounds-check -ffixed-line-length-none -ffree-line-length-none -finit-character=32 -cpp -ffpe-trap=invalid,zero,overflow -O3 -DNDEBUG -O3 -funroll-loops -finline-functions -Wl,--enable-auto-import @CMakeFiles/dscsm047.dir/objects1.rsp -o bin/dscsm047.exe -Wl,--out-implib,libdscsm047.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+ 

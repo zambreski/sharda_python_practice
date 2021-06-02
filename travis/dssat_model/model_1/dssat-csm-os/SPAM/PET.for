@@ -581,7 +581,6 @@ C     EO=ET0
 	  CALL PUT('SPAM', 'REFET', ET0)
 	  CALL PUT('SPAM', 'KC', KC)
 	  
-
 !-----------------------------------------------------------------------
       RETURN
       END SUBROUTINE PETPEN

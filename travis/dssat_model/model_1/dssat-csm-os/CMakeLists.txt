@@ -613,6 +613,7 @@ set(
         "Weather/weathr.for"
         "Weather/WGEN.for"
         "Weather/WTHMOD.for"
+		"Weather/IPKCB.for"
 )
 ADD_EXECUTABLE(${EXECUTABLE_NAME} ${source_list})
 

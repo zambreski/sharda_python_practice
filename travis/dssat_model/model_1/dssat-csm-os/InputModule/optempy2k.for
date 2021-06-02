@@ -188,7 +188,7 @@ C-----------------------------------------------------------------------
 	  IF (IKCB .EQ. 'Y' ) THEN
         LINIO = LINIO + 1
         WRITE (LUNIO,'(A7,8X,A12,1X,A80)',IOSTAT=ERRNUM) 
-     &     'KCFORCE',FILEW,PATHWTW
+     &     'KCFORCE',FILEK,PATHWTW
         IF (ERRNUM .NE. 0) CALL ERROR (ERRKEY,ERRNUM,FILEIO,LINIO)
       ENDIF	 
 	  

@@ -181,6 +181,8 @@ C         Variables to run CASUPRO from Alt_PLANT.  FSR 07-23-03
       TMAX   = WEATHER % TMAX
       TMIN   = WEATHER % TMIN
       TWILEN = WEATHER % TWILEN
+	  
+	  
 
 !***********************************************************************
 !***********************************************************************
@@ -277,7 +279,6 @@ C         Variables to run CASUPRO from Alt_PLANT.  FSR 07-23-03
       UH2O     = 0.0
 
       CALL READ_ASCE_KT(CONTROL, MEEVP)
-	  
 	
 
 !***********************************************************************
@@ -823,6 +824,7 @@ c     Total LAI must exceed or be equal to healthy LAI:
 !     defined in ModuleDefs.for, and contains the following variables.
 !     The components are copied into local variables for use here.
       TYPE (ControlType) CONTROL
+	 
 
       IF (MEEVP .NE. 'S' .AND. MEEVP .NE. 'T') RETURN
 

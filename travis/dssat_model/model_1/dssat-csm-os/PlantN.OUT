@@ -1,6 +1,6 @@
 *PLANT N OUTPUT FILE
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   1        : 20 IRRIG, light rate,freq CRGRO047 UFGA7801    1
  MODEL          : CRGRO047 - Soybean
@@ -146,7 +146,7 @@
  2020 289   135   134     2.0     0.0     1.8    6.64    2.19      0.4     1.8     1.4     0.4    2.92    1.19     3.6    1.1    0.0    0.12    0.48
  2020 290   136   135     2.0     0.0     1.8    6.64    2.19      0.4     1.8     1.4     0.4    2.92    1.19     3.6    1.1    0.0    0.12    0.48
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   2        : 20 RAINFED BRAGG          CRGRO047 UFGA7801    2
  MODEL          : CRGRO047 - Soybean

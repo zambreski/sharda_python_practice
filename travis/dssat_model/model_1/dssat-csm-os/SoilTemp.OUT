@@ -1,6 +1,6 @@
 *SOIL TEMPERATURE OUTPUT FILE (DAILY)
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   1        : 20 IRRIG, light rate,freq CRGRO047 UFGA7801    1
  MODEL          : CRGRO047 - Soybean
@@ -150,7 +150,7 @@
  2020 289   135    21.9    22.0    22.1    22.3    22.5    22.7    23.0    23.2    23.4    23.5
  2020 290   136    17.9    18.0    18.2    18.6    19.0    19.3    19.8    20.4    20.8    21.1
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   2        : 20 RAINFED BRAGG          CRGRO047 UFGA7801    2
  MODEL          : CRGRO047 - Soybean

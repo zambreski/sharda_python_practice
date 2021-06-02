@@ -1,6 +1,6 @@
 *Soil Carbon Balance Summary
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 !                             <----------- Initial State Variables ----------><------------ Final State Variables -----------><------------ Added -----------><-Lost-><-Balance>
 !                             <-------- SOM-C -------><-------- FOM-C -------><-------- SOM-C -------><-------- FOM-C -------><---OM---><Senesced><--HarvRes-><--CO2->
 !                                     Surf        Soil        Surf        Soil        Surf        Soil        Surf        Soil 

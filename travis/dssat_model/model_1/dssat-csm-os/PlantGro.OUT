@@ -1,6 +1,6 @@
 *GROWTH ASPECTS OUTPUT FILE
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   1        : 20 IRRIG, light rate,freq CRGRO047 UFGA7801    1
  MODEL          : CRGRO047 - Soybean
@@ -148,7 +148,7 @@
  2020 289   135   134    5.5      5  0.045     49     35      0     34     84     88      2    12.9  0.003      4     10  0.000  0.000  0.000  0.000  0.000  0.000  0.000    2.92   6.77   0.04      0      4   93.1   0.23   0.24    0.4   1.80    0.06    0.06    0.03    0.01    0.01    0.02    0.01    0.00    0.00        5      25
  2020 290   136   135    5.5      5  0.045     49     35      0     34     84     88      2    12.9  0.003      4     10  0.000  0.000  0.000  0.000  0.000  0.000  0.000    2.92   6.77   0.04      0      4   93.1   0.23   0.24    0.4   1.80    0.06    0.06    0.03    0.01    0.01    0.02    0.01    0.00    0.00        5      25
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   2        : 20 RAINFED BRAGG          CRGRO047 UFGA7801    2
  MODEL          : CRGRO047 - Soybean

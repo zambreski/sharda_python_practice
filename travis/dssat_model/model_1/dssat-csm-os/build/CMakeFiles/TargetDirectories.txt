@@ -1,0 +1,7 @@
+/cygdrive/c/Users/ztz/github_projects/sharda_python_practice/travis/dssat_model/model_1/dssat-csm-os/build/CMakeFiles/install/strip.dir
+/cygdrive/c/Users/ztz/github_projects/sharda_python_practice/travis/dssat_model/model_1/dssat-csm-os/build/CMakeFiles/install/local.dir
+/cygdrive/c/Users/ztz/github_projects/sharda_python_practice/travis/dssat_model/model_1/dssat-csm-os/build/CMakeFiles/install.dir
+/cygdrive/c/Users/ztz/github_projects/sharda_python_practice/travis/dssat_model/model_1/dssat-csm-os/build/CMakeFiles/list_install_components.dir
+/cygdrive/c/Users/ztz/github_projects/sharda_python_practice/travis/dssat_model/model_1/dssat-csm-os/build/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/Users/ztz/github_projects/sharda_python_practice/travis/dssat_model/model_1/dssat-csm-os/build/CMakeFiles/edit_cache.dir
+/cygdrive/c/Users/ztz/github_projects/sharda_python_practice/travis/dssat_model/model_1/dssat-csm-os/build/CMakeFiles/dscsm047.dir

@@ -10,7 +10,7 @@ CULTIVAR       SBGRO047.CUL
 PESTS          SBGRO047.PST                                                                                 
 SOILS          SOIL.SOL                                                                                     
 WEATHERW       RT012001.WTH                                                                                 
-KCFORCE        RT012001.WTH                                                                                 
+KCFORCE        RT012001.KCB                                                                                 
 OUTPUT         OVERVIEW
 *SIMULATION CONTROL 
                    1     1     S 2020155  2150 BRAGG, IRRIGATED & NON-I 

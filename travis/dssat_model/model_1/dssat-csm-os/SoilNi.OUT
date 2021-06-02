@@ -1,6 +1,6 @@
 *Soil Inorganic Nitrogen daily output file
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   1        : 20 IRRIG, light rate,freq CRGRO047 UFGA7801    1
  MODEL          : CRGRO047 - Soybean
@@ -149,7 +149,7 @@
  2020 289   135     0     0    42.8    42.1     0.7     0.0   31.22   46.74    0.36    0.41    0.00   30.81    1.77   24.73    0.00    0.84     0.8     0.6    0.58    0.69    0.79    1.01    2.10    3.49    0.19    0.14    0.04    0.03    0.03    0.01    0.00    0.00    0.01    1.03    0.93    0.60    0.61    0.72    0.80    1.01    2.10    3.49
  2020 290   136     0     0    42.9    42.2     0.7     0.0   31.38   46.88    0.36    0.41    0.00   30.97    1.83   24.73    0.00    0.86     0.8     0.6    0.58    0.69    0.79    1.01    2.10    3.49    0.20    0.14    0.05    0.03    0.03    0.01    0.00    0.00    0.01    1.06    0.94    0.61    0.61    0.73    0.80    1.01    2.10    3.49
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   2        : 20 RAINFED BRAGG          CRGRO047 UFGA7801    2
  MODEL          : CRGRO047 - Soybean

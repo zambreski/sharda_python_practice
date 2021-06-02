@@ -1,6 +1,6 @@
 *SOIL WATER DAILY OUTPUT FILE
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   1        : 20 IRRIG, light rate,freq CRGRO047 UFGA7801    1
  MODEL          : CRGRO047 - Soybean
@@ -149,7 +149,7 @@
  2020 289   135   218   162      4    128    184    17   130   179    0.00   0.0   0.0   0.00   0.088   0.088   0.089   0.088   0.089   0.079   0.078   0.132   0.260
  2020 290   136   218   162      4    128    184    17   130   179    0.00   0.0   0.0   0.00   0.088   0.088   0.089   0.088   0.089   0.079   0.078   0.132   0.260
 
-*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  MAY 07, 2021 11:55:39
+*DSSAT Cropping System Model Ver. 4.7.5.035 -develop  JUN 02, 2021 09:26:05
 
 *RUN   2        : 20 RAINFED BRAGG          CRGRO047 UFGA7801    2
  MODEL          : CRGRO047 - Soybean

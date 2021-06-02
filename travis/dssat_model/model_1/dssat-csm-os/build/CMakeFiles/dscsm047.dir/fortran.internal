@@ -1,0 +1,33 @@
+# The fortran modules provided by this target.
+provides
+ aloha_mod.mod
+ cng_moduledefs.mod
+ csmversion.mod
+ csvoutput.mod
+ ferttype_mod.mod
+ floodmodule.mod
+ forecast.mod
+ headermod.mod
+ interface_ipsoil.mod
+ interface_senlig_ceres.mod
+ interface_soilnbalsum.mod
+ interface_soilpbalsum.mod
+ linklist.mod
+ modsoilmix.mod
+ moduledata.mod
+ moduledefs.mod
+ n2o_mod.mod
+ osdefinitions.mod
+ sam_moduledefs.mod
+ summodule.mod
+ tf_module.mod
+ wh_module.mod
+ yca_albedo_check_m.mod
+ yca_control_environment.mod
+ yca_control_leaf.mod
+ yca_control_photosyntesis.mod
+ yca_control_plant.mod
+ yca_control_vpdeffect.mod
+ yca_first_trans_m.mod
+ yca_formats_m.mod
+ yca_node.mod
