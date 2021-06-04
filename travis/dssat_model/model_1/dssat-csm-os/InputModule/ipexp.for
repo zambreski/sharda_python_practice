@@ -79,7 +79,7 @@ C=======================================================================
       CHARACTER* 1 WMODI,ANS
       CHARACTER* 2 CROP
       CHARACTER* 3 PROCOD,ALN(13),ALLN, PROCODG, PROCODC, PROCODW
-      CHARACTER* 4 WSTA1
+      CHARACTER* 4 WSTA1,KCID
       CHARACTER* 6 VARNO,ERRKEY,FINDCH
       CHARACTER* 7 FILELS
       CHARACTER* 8 FILES_a, FILES_b, MODEL, MODELARG, FILEW4
@@ -568,7 +568,7 @@ C-----------------------------------------------------------------------
 !     Skip soils field and soils input for sequence mode
       IF (INDEX('FQ',RNMODE) .LE. 0 .OR. RUN == 1) THEN
 
-        CALL IPFLD (LUNEXP,FILEX,LNFLD,FLDNAM,WSTA,WSTA1,SLNO,
+        CALL IPFLD (LUNEXP,FILEX,LNFLD,FLDNAM,WSTA,WSTA1,KCID,SLNO,
      &     SLTX,FLST,SLOPE,DFDRN,FLDD,SFDRN,FLOB,SLDP,
      &     XCRD,YCRD,ELEV,AREA,SLEN,FLWR,SLAS,FldHist, FHDur)
 
@@ -795,7 +795,7 @@ C------------------------------------
 	IF (ISWITCH % IKCB .EQ. 'Y') THEN
 		
 		 IF (MEWTH .EQ. 'M' .OR. RNMODE .EQ. 'Y') THEN
-			FILEK = FILE_CHECK(1:8)//'.KCB'
+			FILEK = KCID//FILE_CHECK(5:8)//'.KCB'
 			PRINT *,FILEK
 			INQUIRE (FILE=FILEK, EXIST = FEXIST)
 			PRINT *,FEXIST
@@ -1105,14 +1105,14 @@ C
 C  HDLAY  :
 C=======================================================================
 
-      SUBROUTINE IPFLD (LUNEXP,FILEX,LNFLD,FLDNAM,WSTA,WSTA1,SLNO,
+      SUBROUTINE IPFLD (LUNEXP,FILEX,LNFLD,FLDNAM,WSTA,WSTA1,KCID,SLNO,
      &           SLTX,FLST,SLOPE,DFDRN,FLDD,SFDRN,FLOB,SLDP,
      &           XCRD,YCRD,ELEV,AREA,SLEN,FLWR,SLAS,FldHist, FHDUR)
 
       IMPLICIT NONE
 
       CHARACTER*1  UPCASE
-      CHARACTER*4  WSTA,WSTA1,HFNDCH
+      CHARACTER*4  WSTA,WSTA1,HFNDCH,KCID
       CHARACTER*5  DFDRN,FLST,SLTX, FldHist
       CHARACTER*6  ERRKEY,FINDCH
       CHARACTER*8  FLDNAM
@@ -1134,7 +1134,7 @@ C=======================================================================
  50   CALL IGNORE (LUNEXP,LINEXP,ISECT,CHARTEST)
       IF (ISECT .EQ. 1) THEN
          READ (CHARTEST,60,IOSTAT=ERRNUM) LN,FLDNAM,WSTA,WSTA1,SLOPE,
-     &                     FLOB,DFDRN,FLDD,SFDRN,FLST,SLTX,SLDP,SLNO
+     &                     FLOB,DFDRN,FLDD,SFDRN,FLST,SLTX,SLDP,SLNO,KCID
          IF (ERRNUM .NE. 0) CALL ERROR (ERRKEY,ERRNUM,FILEX,LINEXP)
        ELSE
          CALL ERROR (ERRKEY,2,FILEX,LINEXP)
@@ -1161,7 +1161,7 @@ C=======================================================================
       IF (SFDRN .LE. 0.0) THEN
         SFDRN = 100.
       ENDIF
-
+	 
 C
 C    New section
 C
@@ -1196,7 +1196,7 @@ C     FORMAT Strings
 C-----------------------------------------------------------------------
 
  60   FORMAT (I3,A8,1X,2A4,1X,F5.0,1X,F5.0,1X,A5,2(1X,F5.0),
-     &         2(1X,A5),1X,F5.0,1X,A10)
+     &         2(1X,A5),1X,F5.0,1X,A10,1X,A4)
 !     chp 7/26/2006
 ! 80   FORMAT (I3,2(F15.0,1X),F9.0,1X,F17.0,3(1X,F5.0))
  80   FORMAT (I3,2(F15.0,1X),F9.0,1X,F17.0,3(1X,F5.0),1X,A5,I6)

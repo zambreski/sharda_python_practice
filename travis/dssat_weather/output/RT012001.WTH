@@ -2,7 +2,7 @@
 
 @ INSI      LAT     LONG  ELEV   TAV   AMP REFHT WNDHT    CO2
   RT01   38.036 -101.031   896  20.9  13.4   2.0   2.0  -99.0
-@DATE  SRAD  TMAX  TMIN  RAIN  DEWP  WIND   PAR  EVAP  RHUM  PETO
+@DATE  SRAD  TMAX  TMIN  RAIN  DEWP  WIND   PAR  EVAP  RHUM  RFET
 20106  24.0  17.9  -7.2   0.0       198.7              75.0   4.3
 20107  23.6  16.5  -2.0   0.0       465.7              81.7   4.3
 20108  23.7  13.8  -2.0   0.0       318.0              96.8   3.8

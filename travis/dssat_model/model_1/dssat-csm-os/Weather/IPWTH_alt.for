@@ -23,7 +23,7 @@ C  Called by: WEATHR
 C  Calls:     None
 C=======================================================================
 
-      SUBROUTINE IPWTH(CONTROL, SOURCE,
+      SUBROUTINE IPWTH(CONTROL, ISWITCH, SOURCE,
      &    CCO2, DCO2, FILEW, FILEWC, FILEWG, FILEWW,      !Output
      &    MEWTH, OZON7, PAR,                              !Output
      &    PATHWTC, PATHWTG, PATHWTW,                      !Output
@@ -39,7 +39,7 @@ C=======================================================================
       IMPLICIT NONE
       SAVE
 
-      CHARACTER*1  BLANK, MEWTH, RNMODE, UPCASE
+      CHARACTER*1  BLANK, MEWTH, RNMODE, UPCASE,IKCB
       CHARACTER*4  INSI
       CHARACTER*6  SECTION, ERRKEY, SOURCE
       CHARACTER*8  WSTAT
@@ -89,11 +89,14 @@ C=======================================================================
       INTEGER COL(MAXCOL,2), ICOUNT, C1, C2, ISECT
 
       DATA LastFileW /" "/
+	  
+	  TYPE (SwitchType) ISWITCH
 
 C     The variable "CONTROL" is of constructed type "ControlType" as 
 C     defined in ModuleDefs.for, and contains the following variables.
 C     The components are copied into local variables for use here.
       TYPE (ControlType) CONTROL
+	 
 
       FILEIO = CONTROL % FILEIO  
       LUNIO  = CONTROL % LUNIO
@@ -533,9 +536,11 @@ C       Substitute default values if REFHT or WINDHT are missing.
      &    RAIN_A, RHUM_A, SRAD_A, TDEW_A, TMAX_A,         !Output
      &    TMIN_A, VAPR_A, WINDSP_A, YRDOY_A, YREND,ETO_A)                                          !Output
         IF (ErrCode > 0) RETURN 
-       
-	   CALL READ_KCB(CONTROL,YRDOY_A, !Input
-     &    KCB_A) 
+      
+	  IKCB   = ISWITCH % IKCB       ! ZAMBRESKI 2021
+	  IF (IKCB .EQ. 'Y') THEN
+		   CALL READ_KCB(CONTROL,YRDOY_A,KCB_A) 
+	  ENDIF
 	  
 	  ENDIF
 	  
@@ -755,11 +760,11 @@ C         Read in weather file header.
         OZON7  = OZON7_A(I)
 		ETO    = ETO_A(I)
 		
+		
 		CALL PUT('SPAM', 'KCB', KCB_A(I))
 
         LastRec = I
-		
-		
+
         EXIT
       ENDDO
 
@@ -1036,7 +1041,7 @@ C         Read in weather file header.
                 READ(LINE(C1:C2),*,IOSTAT=ERR) OZON7
                 IF (ERR .NE. 0) OZON7 = -99.0
 			
-			  CASE('PETO')   !Daily potential ET [mm] Penman monteith (ZAMBRESKI 2021)
+			  CASE('RFET')   !Daily reference ET [mm] Penman monteith (ZAMBRESKI 2021)
                 READ(LINE(C1:C2),*,IOSTAT=ERR) ETO
                 IF (ERR .NE. 0) ETO = -99.0
 				
@@ -1184,7 +1189,7 @@ C         Read in weather file header.
 !       Print confirmation that header was found to INFO.OUT
         SELECT CASE (TRIM(HEADER(I)))
           CASE('SRAD','TMAX','TMIN','RAIN','DEWP','TDEW','WIND',
-     &        'PAR','RHUM','VAPR','VPRS','DCO2','CO2','OZON7','PETO')
+     &        'PAR','RHUM','VAPR','VPRS','DCO2','CO2','OZON7','RFET')
             IM = IM + 1
             WRITE(MSG(IM),'(2X,A15,"Col ",I3," - ",I3)') 
      &          HEADER(I), COL(I,1), COL(I,2)

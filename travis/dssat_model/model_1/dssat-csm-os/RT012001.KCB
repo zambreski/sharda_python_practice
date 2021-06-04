@@ -2,7 +2,8 @@
 
 !Values were modeled using geospatial vegetation index imagery at the field scale
 !Values are directly forced in the PETPEN subroutine in the SPAM module
-!Modelers: Travis Wiederstein, Vaishali Sharda, Zachary Zambreski
+!Modelers: Travis Wiederstein, Vaishali Sharda
+!Coded by Zach Zambreski
 !Kansas State University
 !May 2021
 

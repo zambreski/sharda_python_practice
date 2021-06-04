@@ -35,6 +35,7 @@ END_DATE   = '10/15/2020'
 FILE_CONFIGURATION_1 = 'kcb_import_control.xlsx'
 
 
+
 #------#
 # MAIN #
 #------#
@@ -46,7 +47,8 @@ if __name__== "__main__":
     '*DAILY CROP COEFFICENTS (KCB) values\n\n'
     '!Values were modeled using geospatial vegetation index imagery at the field scale\n'
     '!Values are directly forced in the PETPEN subroutine in the SPAM module\n'
-    '!Modelers: Travis Wiederstein, Vaishali Sharda, Zachary Zambreski\n'
+    '!Modelers: Travis Wiederstein, Vaishali Sharda\n'
+    '!Coded by Zach Zambreski\n'
     '!Kansas State University\n'
     '!May 2021\n\n'
     )
@@ -128,7 +130,15 @@ if __name__== "__main__":
         # Combine all strings
         o_text = HEADER_TEXT + sect_header + sect_values_n
         
-        kcb_file = OUT_DIRECTORY.joinpath('KCB.CDE')    
+        # Create file name
+        yy = OUT.index[0][:2]
+        station_counter_fmt = '{:02}'.format(int(VAL_COL))
+        kcb_filename = ''.join([STATION_PREFIX, station_counter_fmt, yy,
+                                '01.KCB'])
+        
+       
+        
+        kcb_file = OUT_DIRECTORY.joinpath(kcb_filename)
         with open(kcb_file, 'w') as f:
             f.write(o_text)
         

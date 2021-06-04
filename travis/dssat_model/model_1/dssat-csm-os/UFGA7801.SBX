@@ -17,14 +17,14 @@
 
 *CULTIVARS
 @C CR INGENO CNAME
- 1 SB IB0001 BRAGG
+ 1 MZ IB0001 CORNL281
 
 *FIELDS
-@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
- 1 UFGA0001 RT01       -99     0 IB000     0     0 00000 -99    180  IBSB910015 -99
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    KCID
+ 1 UFGA0001 RT01       -99     0 IB000     0     0 00000 -99    180  IBSB910015 RT08
 @L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
  1           29.63          -82.37        40                 0     0     0     0   -99   -99
-
+ 
 *INITIAL CONDITIONS
 @C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
  1    SB 20155   100   -99     1     1   -99   -99   -99   -99   -99   -99 -99
@@ -132,7 +132,7 @@
 @N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2   KCB
  1 OP              Y     Y     Y     N     N     N     N     Y     M     Y
 @N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL 
- 1 ME              M     M     E     O     S     L     R     1     G     S     2  
+ 1 ME              M     M     E     F     S     L     R     1     G     S     2  
 @N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
  1 MA              R     R     R     R     M
 @N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT FMOPT
@@ -152,8 +152,8 @@
 
 @N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
  2 GE              1     1     S 20155  2150 sEULEMAN
-@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
- 2 OP              Y     Y     Y     N     N     N     N     Y     M
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2  KCB
+ 2 OP              Y     Y     Y     N     N     N     N     Y     M    Y
 @N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
  2 ME              M     M     E     F     S     L     R     1     G     S     2
 @N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS

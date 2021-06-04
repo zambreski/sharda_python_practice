@@ -79,8 +79,7 @@ if __name__== "__main__":
         
         # Recompile any new files
         os.system('make')
-    
-    
+
     os.system('mv ./bin/dscsm047.exe ..')
     os.chdir('../')
     os.system('./dscsm047.exe A UFGA7801.SBX')

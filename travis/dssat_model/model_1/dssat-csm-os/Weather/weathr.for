@@ -108,18 +108,14 @@ C=======================================================================
       REPNO   = CONTROL % REPNO  
       YRDOY   = CONTROL % YRDOY   
       YRSIM   = CONTROL % YRSIM   
-	  
-	  !PRINT *, CONTROL
-	  
-	  
-	 
+	
 !***********************************************************************
 !***********************************************************************
 !     Run Initialization - Called once per simulation
 !***********************************************************************
       IF (DYNAMIC .EQ. RUNINIT) THEN
 !-----------------------------------------------------------------------
-      CALL IPWTH(CONTROL, ERRKEY,
+      CALL IPWTH(CONTROL, ISWITCH, ERRKEY,
      &    CCO2, DCO2, FILEW, FILEWC, FILEWG, FILEWW,      !Output
      &    MEWTH, OZON7, PAR,                              !Output
      &    PATHWTC, PATHWTG, PATHWTW,                      !Output
@@ -163,7 +159,7 @@ C=======================================================================
 !       Initialize read from file for 'M', 'G' weather options and also for
 !         RNMODE = 'Y' (yield forecast mode) regardless of weather option
         IF (MEWTH .EQ. 'M' .OR. MEWTH .EQ. 'G')THEN
-          CALL IPWTH(CONTROL2, ERRKEY,
+          CALL IPWTH(CONTROL2, ISWITCH, ERRKEY,
      &      CCO2, DCO2, FILEW, FILEWC, FILEWG, FILEWW,    !Output
      &      MEWTH, OZON7, PAR,                            !Output
      &      PATHWTC, PATHWTG, PATHWTW,                    !Output
@@ -323,7 +319,7 @@ C     Compute daily normal temperature.
 !-----------------------------------------------------------------------
 C       Read new weather record.
         IF (MEWTH .EQ. 'M' .OR. MEWTH .EQ. 'G' ) THEN
-          CALL IPWTH(CONTROL2, ERRKEY,
+          CALL IPWTH(CONTROL2,ISWITCH, ERRKEY,
      &      CCO2, DCO2, FILEW, FILEWC, FILEWG, FILEWW,    !Output
      &      MEWTH, OZON7, PAR,                            !Output
      &      PATHWTC, PATHWTG, PATHWTW,                    !Output
@@ -421,7 +417,7 @@ C-----------------------------------------------------------------------
       ELSEIF (DYNAMIC .EQ. SEASEND) THEN
 !-----------------------------------------------------------------------
       IF (MEWTH .EQ. 'M' .OR. MEWTH .EQ. 'G') THEN
-        CALL IPWTH(CONTROL, ERRKEY,
+        CALL IPWTH(CONTROL,ISWITCH, ERRKEY,
      &    CCO2, DCO2, FILEW, FILEWC, FILEWG, FILEWW,      !Output
      &    MEWTH, OZON7, PAR,                              !Output
      &    PATHWTC, PATHWTG, PATHWTW,                      !Output

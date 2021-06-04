@@ -294,7 +294,7 @@ def main():
                             '{tavg:>5.1f} {tamp:>5.1f} {ref_ht:>5.1f} ',
                             '{wind_ht:5.1f} {co2_conc:>6.1f}\n',
                             '@DATE  SRAD  TMAX  TMIN  RAIN  DEWP  WIND   PAR  ',
-                            'EVAP  RHUM  PETO\n']).format(
+                            'EVAP  RHUM  RFET\n']).format(
                             insi=''.join(
                                 [STATION_PREFIX, station_counter_fmt]),
                             lat=LATITUDE,
